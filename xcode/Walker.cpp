@@ -16,15 +16,15 @@ Walker::Walker(){
     
 }
 
-Walker::Walker(int x, int y){
+Walker::Walker( int x, int y ){
     mX = x;
     mY = y;
     mPositiveX = true;
     mPositiveY = true;
     mXCount = 0;
     mYCount = 1;
-    mXMax = randInt(40, 180);
-    mYMax = randInt(40, 180);
+    mXMax = randInt( 40, 180 );
+    mYMax = randInt( 40, 180 );
 }
 
 void Walker::setup()
@@ -33,8 +33,8 @@ void Walker::setup()
 
 void Walker::step()
 {
-    if (mYCount < mYMax) {
-        if(mYCount != 0){
+    if( mYCount < mYMax ) {
+        if( mYCount != 0 ) {
             mY += ( mPositiveY ) ? ( 1 ) : ( -1 );
             mYCount++;
         }
@@ -42,10 +42,10 @@ void Walker::step()
         mPositiveY = !mPositiveY;
         mYCount = 0;
         mXCount = 1;
-        mYMax = randInt(40, 180);
+        mYMax = randInt( 40, 180 );
     }
-    if( mXCount < mXMax){
-        if(mXCount != 0){
+    if( mXCount < mXMax ) {
+        if( mXCount != 0 ) {
             mX += ( mPositiveX ) ? ( 1 ) : ( -1 );
             mXCount++;
         }
@@ -53,12 +53,12 @@ void Walker::step()
         mPositiveX = !mPositiveX;
         mXCount = 0;
         mYCount = 1;
-        mXMax = randInt(40, 180);
+        mXMax = randInt( 40, 180 );
     }
 }
 
 void Walker::draw()
 {
-    gl::drawSolidCircle( Vec2f(mX, mY), 1);
+    gl::drawSolidCircle( Vec2f( mX, mY ), 1 );
 }
 

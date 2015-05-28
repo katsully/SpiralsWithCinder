@@ -23,14 +23,14 @@ class NOCProjectApp : public AppNative {
     //void keyUp( KeyEvent event );
 };
 
-void NOCProjectApp::prepareSettings(Settings *settings) {
-    settings->setWindowSize(800, 800);
+void NOCProjectApp::prepareSettings( Settings *settings ) {
+    settings->setWindowSize( 800, 800 );
 }
 
 void NOCProjectApp::setup()
 {
     gl::clear();
-    mWalker = Walker(getWindowWidth()/2, getWindowHeight()/2);
+    mWalker = Walker( getWindowWidth()/2, getWindowHeight()/2 );
     mMovie = qtime::MovieWriter();
     //initMovieWriter();
 }
