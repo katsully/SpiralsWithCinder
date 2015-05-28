@@ -29,31 +29,31 @@ Walker::Walker(int x, int y){
 
 void Walker::setup()
 {
-    mStepX = 0.0f;
-    mStepY = .5f;
+    mStepX = 0;
+    mStepY = 1;
 }
 
 void Walker::step()
 {
     if (mYCount < mYMax) {
-        if(mStepY != 0.0f){
-            ( mPosY ) ? ( mStepY = 1  ) : ( mStepY = -1 );
+        if(mStepY != 0){
+            mStepY = ( mPosY ) ? ( 1  ) : ( -1 );
             mYCount++;
         }
     } else {
-        mStepY = 0.0f;
+        mStepY = 0;
         mStepX = 1;
         mPosY = !mPosY;
         mYCount = 0;
         mYMax = randInt(40, 180);
     }
     if( mXCount < mXMax){
-        if(mStepX != 0.0f){
-            ( mPosX ) ? ( mStepX = 1 ) : ( mStepX = -1 );
+        if(mStepX != 0){
+            mStepX = ( mPosX ) ? ( 1 ) : ( -1 );
             mXCount++;
         }
     } else {
-        mStepX = 0.0f;
+        mStepX = 0;
         mStepY = 1;
         mPosX = !mPosX;
         mXCount = 0;

@@ -16,8 +16,7 @@ public:
     void draw();
     
     int mX, mY;
-    float mStepX;
-    float mStepY;
+    int mStepX, mStepY;
     
     int mXCount, mYCount;
     int mXMax, mYMax;
