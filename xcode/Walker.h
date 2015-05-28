@@ -12,7 +12,6 @@ public:
     Walker(int x, int y);
     void setup();
     void step();
-    void update();
     void draw();
     
     int mX, mY;

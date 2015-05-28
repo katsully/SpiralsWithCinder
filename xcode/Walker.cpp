@@ -23,21 +23,21 @@ Walker::Walker(int x, int y){
     mPosY = true;
     mXCount = 0;
     mYCount = 0;
+    mStepX = 0;
+    mStepY = 1;
     mXMax = randInt(40, 180);
     mYMax = randInt(40, 180);
 }
 
 void Walker::setup()
 {
-    mStepX = 0;
-    mStepY = 1;
 }
 
 void Walker::step()
 {
     if (mYCount < mYMax) {
         if(mStepY != 0){
-            mStepY = ( mPosY ) ? ( 1  ) : ( -1 );
+            mY += ( mPosY ) ? ( 1 ) : ( -1 );
             mYCount++;
         }
     } else {
@@ -49,7 +49,7 @@ void Walker::step()
     }
     if( mXCount < mXMax){
         if(mStepX != 0){
-            mStepX = ( mPosX ) ? ( 1 ) : ( -1 );
+            mX += ( mPosX ) ? ( 1 ) : ( -1 );
             mXCount++;
         }
     } else {
@@ -59,12 +59,6 @@ void Walker::step()
         mXCount = 0;
         mXMax = randInt(40, 180);
     }
-    mX += mStepX;
-    mY += mStepY;
-}
-
-void Walker::update()
-{
 }
 
 void Walker::draw()
