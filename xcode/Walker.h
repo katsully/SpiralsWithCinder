@@ -7,17 +7,21 @@
 //
 
 class Walker {
-public:
-    Walker();
-    Walker(int x, int y);
-    void setup();
-    void step();
-    void draw();
+    public:
+        Walker();
+        Walker(int x, int y);
+        void setup();
+        void step();
+        void draw();
     
-    int mX, mY;
-    int mXCount, mYCount;
-    int mXMax, mYMax;
+        int mX;
+        int mY;
+        int mXCount;
+        int mYCount;
+        int mXMax;
+        int mYMax;
     
-    bool mPosX, mPosY;
+        bool mPositiveX;
+        bool mPositiveY;
 };
 

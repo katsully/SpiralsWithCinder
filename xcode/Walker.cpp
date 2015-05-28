@@ -19,8 +19,8 @@ Walker::Walker(){
 Walker::Walker(int x, int y){
     mX = x;
     mY = y;
-    mPosX = true;
-    mPosY = true;
+    mPositiveX = true;
+    mPositiveY = true;
     mXCount = 0;
     mYCount = 1;
     mXMax = randInt(40, 180);
@@ -35,22 +35,22 @@ void Walker::step()
 {
     if (mYCount < mYMax) {
         if(mYCount != 0){
-            mY += ( mPosY ) ? ( 1 ) : ( -1 );
+            mY += ( mPositiveY ) ? ( 1 ) : ( -1 );
             mYCount++;
         }
     } else {
-        mPosY = !mPosY;
+        mPositiveY = !mPositiveY;
         mYCount = 0;
         mXCount = 1;
         mYMax = randInt(40, 180);
     }
     if( mXCount < mXMax){
         if(mXCount != 0){
-            mX += ( mPosX ) ? ( 1 ) : ( -1 );
+            mX += ( mPositiveX ) ? ( 1 ) : ( -1 );
             mXCount++;
         }
     } else {
-        mPosX = !mPosX;
+        mPositiveX = !mPositiveX;
         mXCount = 0;
         mYCount = 1;
         mXMax = randInt(40, 180);
