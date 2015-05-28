@@ -9,7 +9,7 @@
 class Walker {
     public:
         Walker();
-        Walker(int x, int y);
+        Walker( int x, int y );
         void setup();
         void step();
         void draw();
