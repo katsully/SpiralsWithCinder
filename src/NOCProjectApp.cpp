@@ -27,10 +27,9 @@ void NOCProjectApp::prepareSettings( Settings *settings ) {
     settings->setWindowSize( 800, 800 );
 }
 
-void NOCProjectApp::setup()
-{
+void NOCProjectApp::setup(){
     gl::clear();
-    mWalker = Walker( getWindowWidth()/2, getWindowHeight()/2 );
+    mWalker = Walker( getWindowWidth() / 2, getWindowHeight() / 2 );
     mMovie = qtime::MovieWriter();
     //initMovieWriter();
 }
@@ -50,12 +49,10 @@ void NOCProjectApp::setup()
 ////    }
 //}
 
-void NOCProjectApp::update()
-{
+void NOCProjectApp::update(){
 }
 
-void NOCProjectApp::draw()
-{
+void NOCProjectApp::draw(){
     mWalker.step();
     mWalker.draw();
 //    if( mMovie ){

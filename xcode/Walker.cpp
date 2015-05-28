@@ -13,7 +13,6 @@ using namespace ci;
 using namespace ci::app;
 
 Walker::Walker(){
-    
 }
 
 Walker::Walker( int x, int y ){
@@ -27,12 +26,10 @@ Walker::Walker( int x, int y ){
     mYMax = randInt( 40, 180 );
 }
 
-void Walker::setup()
-{
+void Walker::setup(){
 }
 
-void Walker::step()
-{
+void Walker::step(){
     if( mYCount < mYMax ) {
         if( mYCount != 0 ) {
             mY += ( mPositiveY ) ? ( 1 ) : ( -1 );
@@ -57,8 +54,7 @@ void Walker::step()
     }
 }
 
-void Walker::draw()
-{
+void Walker::draw(){
     gl::drawSolidCircle( Vec2f( mX, mY ), 1 );
 }
 
