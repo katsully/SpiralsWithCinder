@@ -13,6 +13,7 @@ class Walker {
         void setup();
         void step();
         void draw();
+        float montecarlo();
     
         int mX;
         int mY;

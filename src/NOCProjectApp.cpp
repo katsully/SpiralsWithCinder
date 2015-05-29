@@ -17,6 +17,9 @@ class NOCProjectApp : public AppNative {
     
     vector<float> mRandomCounts;
     Walker mWalker;
+    Walker mWalker2;
+    Walker mWalker3;
+    Walker mWalker4;
     
     qtime::MovieWriter mMovie;
     void initMovieWriter();
@@ -30,7 +33,10 @@ void NOCProjectApp::prepareSettings( Settings *settings ) {
 void NOCProjectApp::setup(){
     gl::clear();
     mWalker = Walker( getWindowWidth() / 2, getWindowHeight() / 2 );
-    mMovie = qtime::MovieWriter();
+    mWalker2 = Walker( getWindowWidth() / 2 , getWindowHeight() / 2 );
+    mWalker3 = Walker( getWindowWidth() / 2, getWindowHeight() / 2 );
+    mWalker4 = Walker( getWindowWidth() / 2, getWindowHeight() / 2 );
+    // mMovie = qtime::MovieWriter();
     //initMovieWriter();
 }
 
@@ -54,7 +60,13 @@ void NOCProjectApp::update(){
 
 void NOCProjectApp::draw(){
     mWalker.step();
+    mWalker2.step();
+    mWalker3.step();
+    mWalker4.step();
     mWalker.draw();
+    mWalker2.draw();
+    mWalker3.draw();
+    mWalker4.draw();
 //    if( mMovie ){
 //        mMovie.addFrame( copyWindowSurface() );
 //    }

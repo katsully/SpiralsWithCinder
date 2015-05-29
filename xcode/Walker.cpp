@@ -22,8 +22,8 @@ Walker::Walker( int x, int y ){
     mPositiveY = true;
     mXCount = 0;
     mYCount = 1;
-    mXMax = randInt( 40, 180 );
-    mYMax = randInt( 40, 180 );
+    mXMax = montecarlo();
+    mYMax = montecarlo();
 }
 
 void Walker::setup(){
@@ -39,7 +39,7 @@ void Walker::step(){
         mPositiveY = !mPositiveY;
         mYCount = 0;
         mXCount = 1;
-        mYMax = randInt( 40, 180 );
+        mYMax = montecarlo();
     }
     if( mXCount < mXMax ) {
         if( mXCount != 0 ) {
@@ -50,11 +50,23 @@ void Walker::step(){
         mPositiveX = !mPositiveX;
         mXCount = 0;
         mYCount = 1;
-        mXMax = randInt( 40, 180 );
+        mXMax = montecarlo();
     }
 }
 
 void Walker::draw(){
     gl::drawSolidCircle( Vec2f( mX, mY ), 1 );
+}
+
+float Walker::montecarlo(){
+    while (true) {
+        float random1 = randFloat(40, 250);
+        float probability = random1 * random1;
+        float random2 = randFloat(40, 250);
+        
+        if( random2 < probability ){
+            return random1;
+        }
+    }
 }
 
