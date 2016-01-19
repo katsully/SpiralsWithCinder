@@ -1,3 +1,3 @@
-dependencies: /Users/kathleen/NOCProject/xcode/Walker.cpp \
-  /Users/kathleen/NOCProject/xcode/Walker.h \
-  ../../Downloads/cinder_0.8.6_mac/include/cinder/Rand.h
+dependencies: /Users/Kat/SpiralsWithCinder/xcode/Walker.cpp \
+  /Users/Kat/SpiralsWithCinder/xcode/Walker.h \
+  /Users/Kat/Cinder/include/cinder/Rand.h
